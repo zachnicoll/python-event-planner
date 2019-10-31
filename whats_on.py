@@ -1,89 +1,9 @@
-
-#-----Statement of Authorship----------------------------------------#
-#
-#  This is an individual assessment item.  By submitting this
-#  code I agree that it represents my own work.  I am aware of
-#  the University rule that a student must not act in a manner
-#  which constitutes academic dishonesty as stated and explained
-#  in QUT's Manual of Policies and Procedures, Section C/5.3
-#  "Academic Integrity" and Section E/2.1 "Student Code of Conduct".
-#
-#    Student no: n10214453
-#    Student name: Zachary Nicoll
-#
-#  NB: Files submitted without a completed copy of this statement
-#  will not be marked.  Submitted files will be subjected to
-#  software plagiarism analysis using the MoSS system
-#  (http://theory.stanford.edu/~aiken/moss/).
-#
-#--------------------------------------------------------------------#
-
-
-
-#-----Assignment Description-----------------------------------------#
-#
-#  What's On?: Online Entertainment Planning Application
-#
-#  In this assignment you will combine your knowledge of HTMl/XML
-#  mark-up languages with your skills in Python scripting, pattern
-#  matching, and Graphical User Interface design to produce a useful
-#  application for planning an entertainment schedule.  See
-#  the instruction sheet accompanying this file for full details.
-#
-#--------------------------------------------------------------------#
-
-
-
-#-----Imported Functions---------------------------------------------#
-#
-# Below are various import statements for helpful functions.  You
-# should be able to complete this assignment using these
-# functions only.  Note that not all of these functions are
-# needed to successfully complete this assignment.
-
-# The function for opening a web document given its URL.
-# (You WILL need to use this function in your solution,
-# either directly or via our "download" function.)
-from urllib.request import urlopen
-
-# Import the standard Tkinter functions. (You WILL need to use
-# these functions in your solution.  You may import other widgets
-# from the Tkinter module provided they are ones that come bundled
-# with a standard Python 3 implementation and don't have to
-# be downloaded and installed separately.)
 from tkinter import *
 from tkinter import messagebox
-
-# Functions for finding all occurrences of a pattern
-# defined via a regular expression, as well as
-# the "multiline" and "dotall" flags.  (You do NOT need to
-# use these functions in your solution, because the problem
-# can be solved with the string "find" function, but it will
-# be difficult to produce a concise and robust solution
-# without using regular expressions.)
 from re import findall, finditer, MULTILINE, DOTALL
-
-# Import the standard SQLite functions (just in case they're
-# needed one day).
 from sqlite3 import *
 
-#
-#--------------------------------------------------------------------#
-
-
-
-#-----Downloader Function--------------------------------------------#
-#
-# This is our function for downloading a web page's content and both
-# saving it as a local file and returning its source code
-# as a Unicode string. The function tries to produce
-# a meaningful error message if the attempt fails.  WARNING: This
-# function will silently overwrite the target file if it
-# already exists!  NB: You should change the filename extension to
-# "xhtml" when downloading an XML document.  (You do NOT need to use
-# this function in your solution if you choose to call "urlopen"
-# directly, but it is provided for your convenience.)
-#
+# Downloader function for grabbing each webpage.
 def download(url = 'http://www.wikipedia.org/',
              target_filename = 'download',
              filename_extension = 'html'):
@@ -129,8 +49,6 @@ def download(url = 'http://www.wikipedia.org/',
 #--------------------------------------------------------------------#
 
 
-
-#-----Student's Solution---------------------------------------------#
 
 ###### Websites Used ######
 # 1. https://www.songkick.com/metro_areas/26778-australia-brisbane#date-filter-form -> Upcoming concerts
